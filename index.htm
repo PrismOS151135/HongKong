@@ -2,20 +2,24 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>HongKongMan~</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HongKongMan已离开了林伟华:</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
       background: url('backgroud.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #ffffff;
     }
 
     .overlay {
-      background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色遮罩增强可读性 */
+      background-color: rgba(0, 0, 0, 0.5);
       position: absolute;
       top: 0;
       bottom: 0;
@@ -25,22 +29,36 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 20px;
+      text-align: center;
     }
 
     h1 {
-      font-size: 2em;
+      font-size: 6vw;
       margin-bottom: 20px;
     }
 
     #timer {
-      font-size: 2.5em;
+      font-size: 5.5vw;
       font-weight: bold;
+      word-wrap: break-word;
+    }
+
+    /* 更大屏幕上的优化（平板、PC） */
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 2.5em;
+      }
+
+      #timer {
+        font-size: 2em;
+      }
     }
   </style>
 </head>
 <body>
   <div class="overlay">
-    <h1>HongKongMan已经离开了林伟华</h1>
+    <h1>距离 2025年5月9日 16:45 已经过了：</h1>
     <div id="timer">加载中...</div>
   </div>
 
@@ -49,7 +67,7 @@
 
     function updateTimer() {
       const now = new Date();
-      let diff = Math.floor((now - startTime) / 1000); // 总秒数
+      let diff = Math.floor((now - startTime) / 1000); // 秒数差
 
       const years = Math.floor(diff / (365.25 * 24 * 60 * 60));
       diff -= years * 365.25 * 24 * 60 * 60;
