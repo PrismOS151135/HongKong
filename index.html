@@ -62,7 +62,6 @@
       }
     }
 
-    /* 菜单按钮样式：白底黑字 */
     #menuBtn {
       position: fixed;
       bottom: 20px;
@@ -78,7 +77,6 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
 
-    /* 侧栏样式：白底黑字 */
     #sidebar {
       height: 100%;
       width: 0;
@@ -115,7 +113,6 @@
       color: black;
     }
 
-    /* 点击侧边栏外区域时的遮罩 */
     #sidebarOverlay {
       display: none;
       position: fixed;
@@ -133,19 +130,15 @@
     <div id="timer">加载中...</div>
   </div>
 
-  <!-- 遮罩层（点击关闭侧栏） -->
   <div id="sidebarOverlay" onclick="closeSidebar()"></div>
-
-  <!-- 左下角菜单按钮 -->
   <button id="menuBtn" onclick="openSidebar()">☰ 菜单</button>
 
-  <!-- 侧边栏 -->
   <div id="sidebar">
     <span class="closebtn" onclick="closeSidebar()">×</span>
-	  <a href="no.htm" target="_blank">H.K.M.留言板</a>
-      <a href="https://www.bilibili.com" target="_blank">Bilibili</a>
-	  <a href="https://user.qzone.qq.com/3882552602" target="_blank">13班QQ空间</a>
-	  <a href="https://github.com/PrismOS151135/HongKong" target="_blank">仓库</a>
+    <a href="no.htm" target="_blank">H.K.M.留言板</a>
+    <a href="https://www.bilibili.com" target="_blank">Bilibili</a>
+    <a href="https://user.qzone.qq.com/3882552602" target="_blank">13班QQ空间</a>
+    <a href="https://github.com/PrismOS151135/HongKong" target="_blank">仓库</a>
   </div>
 
   <script>
@@ -168,7 +161,7 @@
       diff -= hours * 3600;
 
       const minutes = Math.floor(diff / 60);
-      const seconds = diff % 60;
+      const seconds = Math.round(diff % 60); // ✅ 使用四舍五入避免显示小数秒
 
       document.getElementById("timer").textContent =
         `${years} 年 ${months} 月 ${days} 天 ` +
