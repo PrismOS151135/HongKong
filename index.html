@@ -136,8 +136,8 @@
   <div id="sidebar">
     <span class="closebtn" onclick="closeSidebar()">×</span>
     <a href="no.htm" target="_blank">H.K.M.留言板</a>
+    <a href="ni.html" target="_blank">高考倒计时</a>
     <a href="https://www.bilibili.com" target="_blank">Bilibili</a>
-    <a href="https://user.qzone.qq.com/3882552602" target="_blank">13班QQ空间</a>
     <a href="https://github.com/PrismOS151135/HongKong" target="_blank">仓库</a>
   </div>
 
@@ -161,7 +161,7 @@
       diff -= hours * 3600;
 
       const minutes = Math.floor(diff / 60);
-      const seconds = Math.round(diff % 60); // ✅ 使用四舍五入避免显示小数秒
+      const seconds = Math.round(diff % 60); //使用四舍五入避免显示小数秒
 
       document.getElementById("timer").textContent =
         `${years} 年 ${months} 月 ${days} 天 ` +
